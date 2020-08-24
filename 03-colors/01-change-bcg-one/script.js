@@ -9,31 +9,17 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 (function() {
-
+    // to get the a section in the DOM document.document.querySelector("element")
+    const body = document.querySelector("body")
     // your code here
-    const para = document.getElementsByTagName("p");
-
     const changeColor = function(bgColor) {
         // perform the operation
-        switch (bgColor) {
-            case "red":
-                alert(bgColor)
-                break;
-            case "green":
-                alert(bgColor);
-                break;
-            case "yellow":
-                alert(bgColor);
-                break;
-            case "blue":
-                alert(bgColor);
-                break;
-        }
+        body.style.backgroundColor = bgColor;
     };
 
-    Array.from(document.querySelectorAll("button.btn")).forEach(function($btn) {
-        $btn.addEventListener("click", function() {
-            changeColor($btn.id);
+    Array.from(document.querySelectorAll("button.btn")).forEach(function(btn) {
+        btn.addEventListener("click", function() {
+            changeColor(btn.id);
         });
     });
 
