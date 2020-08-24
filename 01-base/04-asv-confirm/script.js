@@ -20,5 +20,5 @@
         var age = prompt("How old are you?");
         var place = prompt("Where do you live please?");
     }
-
 })();
+
