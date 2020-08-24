@@ -17,7 +17,9 @@
     document.getElementById("run").addEventListener("click", function() {
 
         // your code here
-        alert(values);
+        let ar = values.split(', ');
+        alert(ar.sort((a,b)=>a-b));
+
     });
 
 })();
