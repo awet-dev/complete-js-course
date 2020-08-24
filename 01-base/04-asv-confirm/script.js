@@ -11,6 +11,14 @@
 
 (function() {
 
-    // your code here
+    var name = prompt("What is your name");
+    var age = prompt("How old are you?");
+    var place = prompt("Where do you live please?");
+    var answer = confirm(`My name is ${name} and I am ${age} years old and I live in ${place}`);
+    if (answer == !true) {
+        var name = prompt("What is your name");
+        var age = prompt("How old are you?");
+        var place = prompt("Where do you live please?");
+    }
 
 })();
