@@ -12,11 +12,12 @@
 (function() {
 
     // to get the value of an input: document.getElementById("element-id").value
+    let values = document.getElementById("numbers").value;
 
     document.getElementById("run").addEventListener("click", function() {
 
         // your code here
-
+        alert(values);
     });
 
 })();
