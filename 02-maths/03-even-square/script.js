@@ -13,8 +13,8 @@
 
     document.getElementById("run").addEventListener("click", function() {
 
-        // your code here
-
+       for (let x = 1; (x*x) < 21; x++)
+           alert(x*x)
     });
 
 })();
