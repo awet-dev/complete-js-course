@@ -11,7 +11,7 @@
 
 (function() {
 
-    var people = [
+    let people = [
         {
             firstname: "Dreddy",
             lastname: "Nussgen",
@@ -90,5 +90,14 @@
     ];
 
     // your code here
+    let overAge = [];
+    document.querySelector("#run").addEventListener("click", () => {
+        people.forEach((person, index) => {
+            if (people[index].age > 18) {
+                overAge.push(people[index]);
+            }
+        })
+        console.log(overAge);
+    });
 
 })();

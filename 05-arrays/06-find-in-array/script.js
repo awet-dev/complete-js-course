@@ -94,7 +94,7 @@
     btn.addEventListener("click", () => {
         people.forEach((person, index) => {
             if ((people[index].firstname === "Jean") && (people[index].lastname === "Dupont")) {
-                console.log(people[index].email);
+                console.log(`Email: ${people[index].email}, Index ${index}`);
             }
         })
     });
