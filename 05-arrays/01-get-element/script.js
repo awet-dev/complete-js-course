@@ -27,5 +27,9 @@
     ];
 
     // your code here
+    const btn = document.querySelector("#run");
+    btn.addEventListener("click", () => {
+        console.log(fruits[3]);
+    })
 
 })();
