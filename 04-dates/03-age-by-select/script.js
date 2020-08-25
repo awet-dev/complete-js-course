@@ -12,5 +12,17 @@
 (function() {
 
     // your code here
+    // Initialize a new birthday instance
+    let d = document.querySelector("#dob-day").value;
+    let m = document.querySelector("#dob-month").value;
+    let y = document.querySelector("#dob-year").value;
+    let time = {
+        day: d,
+        month: m,
+        year: y
+    }
+    document.querySelector("#run").addEventListener("click", function () {
+        alert(`User birthday is ${time.day}/${time.month}/${time.year}`);
+    })
 
 })();
