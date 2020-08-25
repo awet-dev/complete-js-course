@@ -12,5 +12,18 @@
 (function() {
 
     // your code here
+    document.querySelector("#run").addEventListener("click", () => {
+        let userInput = parseInt(document.getElementById("year").value);
+        const now = new Date();
+        let fullYear = now.setFullYear(userInput);
+        alert(fullYear);
+        let yearmonth = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+        yearmonth.forEach(($month) => {
+            // check if 13th of each month is friday
+            if (fullYear.getDate[13] === "friday") {
+                alert(`${fullYear.getFullYear} ${fullYear.getDate}`)
+            }
+        })
+    })
 
 })();
