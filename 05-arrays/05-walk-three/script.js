@@ -11,7 +11,7 @@
 
 (function() {
 
-    var people = [
+    let people = [
         {
             firstname: "Garald",
             lastname: "Freschi",
@@ -40,5 +40,11 @@
     ];
 
     // your code here
+    const btn = document.querySelector("#run");
+    btn.addEventListener("click", () => {
+        people.forEach((person, index) => {
+            console.log(people[index].firstname);
+        })
+    });
 
 })();
