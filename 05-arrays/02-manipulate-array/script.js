@@ -11,7 +11,7 @@
 
 (function() {
 
-    var fruits = [
+    let fruits = [
         "pomme",
         "poire",
         "fraise",
@@ -23,7 +23,15 @@
         "raisin",
         "cerise",
     ];
-
     // your code here
+    const btn = document.querySelector("#run");
+    const display = document.querySelector("#display");
+    btn.addEventListener("click", () => {
+        fruits.shift();
+        fruits.pop();
+        fruits.unshift("banana")
+        fruits.push("kiwi");
+        display.textContent = `${fruits}`;
+    })
 
 })();
