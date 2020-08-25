@@ -11,7 +11,7 @@
 
 (function() {
 
-    var people = [
+    let people = [
         {
             firstname: "Bradford",
             lastname: "Coldbath",
@@ -90,5 +90,13 @@
     ];
 
     // your code here
+    const btn = document.querySelector("#run");
+    btn.addEventListener("click", () => {
+        people.forEach((person, index) => {
+            if ((people[index].firstname === "Jean") && (people[index].lastname === "Dupont")) {
+                console.log(people[index].email);
+            }
+        })
+    });
 
 })();
