@@ -90,13 +90,15 @@
     ];
 
     // your code here
-    const btn = document.querySelector("#run");
-    btn.addEventListener("click", () => {
-        people.forEach((person, index) => {
-            if ((people[index].firstname === "Jean") && (people[index].lastname === "Dupont")) {
-                console.log(`Email: ${people[index].email}, Index ${index}`);
-            }
-        })
-    });
+    document.querySelector("#run").addEventListener("click", () => {
+        const found = people.find($person => $person.firstname === "Jean" && $person.lastname === "Dupont");
+        let emails = [];
+        people.forEach(($person) => {
+            emails.push($person.email);
+        });
+        const indexEmail = emails.indexOf(found.email);
+        console.log(`Email: ${found.email} and its Index: ${indexEmail}`);
+
+    })
 
 })();

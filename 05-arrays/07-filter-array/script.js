@@ -89,15 +89,11 @@
         },
     ];
 
+
     // your code here
-    let overAge = [];
     document.querySelector("#run").addEventListener("click", () => {
-        people.forEach((person, index) => {
-            if (people[index].age > 18) {
-                overAge.push(people[index]);
-            }
-        })
-        console.log(overAge);
+        const underAge = people.filter($person => $person.age > 18);
+        console.log(underAge);
     });
 
 })();
