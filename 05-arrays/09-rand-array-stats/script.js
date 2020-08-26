@@ -12,5 +12,24 @@
 (function() {
 
     // your code here
+    let numArray = [];
+    document.querySelector("#run").addEventListener("click", () => {
+        let sum = 0;
+        for (let i = 1; i <= 10; i++) {
+            let el = Math.floor(Math.random() * (100 - 1) + 1);
+            numArray.push(el);
+            sum += el;
+            document.querySelector(`#n-${i}`).innerHTML = `${el}`;
+        }
+        const min = Math.min(...numArray);
+        const max = Math.max(...numArray);
+        let avr = (sum/10);
+        console.log(numArray);
+        document.querySelector("#min").innerHTML = `${min}`;
+        document.querySelector("#max").innerHTML = `${max}`;
+        document.querySelector("#sum").innerHTML = `${sum}`;
+        document.querySelector("#average").innerHTML = `${avr}`;
+
+    })
 
 })();
