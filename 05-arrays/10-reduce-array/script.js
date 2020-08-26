@@ -91,12 +91,12 @@
 
     // your code here
     document.querySelector("#run").addEventListener("click", () => {
-        let totalAge = 0;
-        people.forEach(($person, index) => {
-            totalAge += people[index].age;
-        });
+        let peopleAges = [];
+        people.forEach(($age) => {
+            peopleAges.push($age.age);
+        })
+        let totalAge = peopleAges.reduce((a, b) => a + b, 0);
         console.log(totalAge);
-
-    });
+    })
 
 })();
