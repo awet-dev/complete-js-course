@@ -91,15 +91,12 @@
 
     // your code here
     document.querySelector("#run").addEventListener("click", () => {
+        let totalAge = 0;
+        people.forEach(($person, index) => {
+            totalAge += people[index].age;
+        });
+        console.log(totalAge);
 
-        // Getting sum of numbers
-        let sum = 0;
-        people.forEach(($age,index) => {
-            sum = people.reduce(function (a,b) {
-                return a[index].age + b[index].age;
-            }, 0);
-        })
-        console.log(sum)
     });
 
 })();
