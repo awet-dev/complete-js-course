@@ -11,12 +11,12 @@
 
 (function question() {
 
-    var name = prompt("What is your name");
-    var age = prompt("How old are you?");
-    var place = prompt("Where do you live please?");
-    var answer = confirm(`My name is ${name} and I am ${age} years old and I live in ${place}`);
-    if (answer == !true) {
-        question();
+    let name = prompt("What is your name");
+    let age = prompt("How old are you?");
+    let place = prompt("Where do you live please?");
+    let answer = confirm(`Name: ${name}, Age: ${age}, Town: ${place} \n Please confirm ?` );
+    if (answer === false) {
+    question();
     }
 })();
 

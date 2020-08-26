@@ -11,13 +11,21 @@
 
 (function() {
 
-  var wantCake = prompt("Do you want some cake?");
-  if (wantCake == "yes") {
-      alert("Congratulation!");
-  } else if (wantCake == "no") {
-      alert("More cake for me then please!")
-  } else {
-      alert("I don't know what you say?")
+  function getAnswer() {
+      let wantCake = prompt("Do you want some cake?");
+      if (wantCake) {
+          if (wantCake === "yes") {
+              alert("Congratulation!");
+          } else if (wantCake === "no") {
+              alert("More cake for me then please!")
+          } else {
+              alert("I don't know what you say?")
+          }
+      } else {
+          alert("Please Enter Your Answer")
+          getAnswer();
+      }
   }
+  getAnswer();
 
 })();

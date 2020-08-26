@@ -11,7 +11,7 @@
 
 (function() {
 
-    var greating = "Hello World";
-    alert(greating);
+    let greeting = "Hello, World!";
+    alert(greeting);
 
 })();
