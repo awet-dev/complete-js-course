@@ -11,7 +11,7 @@
 
 (function() {
 
-    var fruits = [
+    let fruits = [
         "apple",
         "pear",
         "raspberry",
@@ -27,8 +27,7 @@
     ];
 
     // your code here
-    const btn = document.querySelector("#run");
-    btn.addEventListener("click", () => {
+    document.querySelector("#run").addEventListener("click", () => {
         console.log(fruits[3]);
     })
 

@@ -40,9 +40,8 @@
     ];
 
     // your code here
-    const btn = document.querySelector("#run");
-    btn.addEventListener("click", () => {
-        people.forEach((person, index) => {
+    document.querySelector("#run").addEventListener("click", () => {
+        people.forEach(($person,index) => {
             console.log(people[index].firstname);
         })
     });

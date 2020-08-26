@@ -27,8 +27,7 @@
     ];
 
     // your code here
-    const btn = document.querySelector("#run");
-    btn.addEventListener("click", () => {
+    document.querySelector("#run").addEventListener("click", () => {
         for (let i = 0; i < fruits.length; i++) {
             console.log(fruits[i]);
         }
