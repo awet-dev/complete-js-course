@@ -12,9 +12,9 @@
 (function() {
 
     // your code here
+    let userColor = document.getElementById("color").value;
     document.querySelector("#run").addEventListener("click", function () {
         const body = document.querySelector("body");
-        let inputColor = document.getElementById("color").value;
-       body.style.backgroundColor = inputColor;
+       body.style.backgroundColor = userColor;
     })
 })();

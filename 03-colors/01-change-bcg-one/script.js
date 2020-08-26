@@ -10,9 +10,9 @@
 // You will have time to focus on it later.
 (function() {
     // to get the a section in the DOM document.document.querySelector("element")
-    const body = document.querySelector("body")
+    const body = document.querySelector("body");
     // your code here
-    const changeColor = function(bgColor) {
+    const changeColor = (bgColor) => {
         // perform the operation
         body.style.backgroundColor = bgColor;
     };

@@ -14,11 +14,12 @@
     let v1 = parseFloat(document.getElementById("op-one").value);
     let v2 = parseFloat(document.getElementById("op-two").value);
     document.getElementById("addition").addEventListener("click", function() {
+        // perform an addition
         alert(v1 + v2);
     });
 
-    document.getElementById("substraction").addEventListener("click", function() {
-        // perform an substraction
+    document.getElementById("subtraction").addEventListener("click", function() {
+        // perform an subtraction
         alert(v1 - v2);
     });
 
@@ -31,5 +32,6 @@
         // perform an division
         alert(v1 / v2);
     });
+
 })();
 

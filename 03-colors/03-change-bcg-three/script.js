@@ -12,7 +12,10 @@
 (function() {
 
     // your code here
-    function getRandomColor() {
+    const body = document.querySelector("body");
+    const runBtn = document.querySelector("#run");
+
+    const getRandom = () => {
         let letters = "0123456789ABCDEF";
         let color = "#";
         for (let i = 0; i < 6; i++) {
@@ -20,11 +23,8 @@
         }
         return color;
     }
-
-    const runBtn = document.querySelector("#run");
     runBtn.addEventListener("click", function () {
-        const body = document.querySelector("body");
-        body.style.backgroundColor = getRandomColor();
+        body.style.backgroundColor = getRandom();
     });
 
 })();

@@ -16,11 +16,11 @@
     // your code here
 
     const now = new Date();
+    let tagContent = document.getElementById("target");
     if (now.getHours() < 18) {
-        document.getElementById("target").innerHTML = "Hello!";
+    tagContent.innerHTML = "Hello!";
     } else {
-        document.getElementById("target").innerHTML = "Good Evening";
+        tagContent.innerHTML = "Good Evening";
     }
-
 
 })();

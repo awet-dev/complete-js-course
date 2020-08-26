@@ -13,15 +13,15 @@
 
     // to change the content of a tag: document.getElementById("element-id").innerHTML = "new-value"
     // your code here
+    let tagContent = document.getElementById("target");
     let weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    let yearmonth = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    let now = new Date();
+    let days = weekdays[now.getDay()];
+    let month = yearmonth[now.getMonth()];
     weekdays.forEach(function () {
-        let now = new Date();
-        let days = weekdays[now.getDay()];
-        let yearmonth = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
         yearmonth.forEach(function () {
-            let months = yearmonth[now.getMonth()];
-            document.getElementById("target").innerHTML = `${days} ${now.getDate()} ${months} ${now.getFullYear()} ${now.getHours()}h${now.getMinutes()}`;
+            tagContent.innerHTML = `${days} ${now.getDate()} ${month} ${now.getFullYear()} ${now.getHours()}h${now.getMinutes()}`;
         })
     })
-
 })();

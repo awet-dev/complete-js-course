@@ -16,6 +16,7 @@
     let d = document.querySelector("#dob-day").value;
     let m = document.querySelector("#dob-month").value;
     let y = document.querySelector("#dob-year").value;
+
     let time = {
         day: d,
         month: m,
