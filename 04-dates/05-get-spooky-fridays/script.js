@@ -10,21 +10,22 @@
 // You will have time to focus on it later.
 
 (function() {
+    let userInputYear;
+
+
     document.querySelector("#run").addEventListener("click", () => {
-        let userInput = parseFloat(document.getElementById("year").value);
-        const event = new Date();
-        let userYear = event.setFullYear(userInput);
-        let weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-        let day = weekdays[event.getDay()];
-        let yearmonth = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-        yearmonth.forEach(function ($month) {
-            if (((event.getDay()) === 13) && (day === "Friday")) {
-                console.log(day, $month, userYear);
+        userInputYear = document.getElementById("year").value;
+        let result = "";
+        for (let i = 0; i <= 11; i++){
+            let day = new Date(userInputYear, i, 13);
+            let weekday = day.getDay();
+            if (weekday === 5){
+                result += (day.toLocaleString("default", {month: "long"}) + "\n");
             }
-        })
-    });
+        }
+        alert(result);
 
-    // your code here
 
+    })
 
 })();
