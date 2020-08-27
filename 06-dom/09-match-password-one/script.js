@@ -12,5 +12,14 @@
 (function() {
 
     // your code here
+    const password = document.querySelector("#pass-one");
+    const confirm = document.querySelector("#pass-two");
+    const checkBtn = document.querySelector("#run");
+    checkBtn.addEventListener("click", ()=> {
+        if (password.value !== confirm.value) {
+            password.style.borderColor = "red";
+            confirm.style.borderColor = "red";
+        }
+    })
 
 })();

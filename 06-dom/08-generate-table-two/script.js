@@ -12,5 +12,23 @@
 (function() {
 
     // your code here
+    const target = document.querySelector("#target");
+    const table = document.createElement("table");
+    let tdArray = [];
+    let trArray = [];
+    for (let i = 0; i < 10; i++) {
+        for (let x = 0; x < 10; x++) {
+            tdArray.push(document.createElement("td"));
+        }
+        trArray.push(document.createElement("tr"));
+    }
+    tdArray.forEach(($td, index)=> {
+        trArray[index].append($td);
+        table.append(trArray[index]);
+    })
+    document.querySelector("#target").append(table);
+
+
+
 
 })();
