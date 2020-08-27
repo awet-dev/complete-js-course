@@ -12,5 +12,9 @@
 (function() {
 
     // your code here
+    const paragraph = document.querySelectorAll(".target");
+    paragraph.forEach(($p) => {
+        $p.innerHTML = "owned"
+    })
 
 })();

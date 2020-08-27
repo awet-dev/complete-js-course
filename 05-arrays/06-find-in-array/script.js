@@ -92,11 +92,7 @@
     // your code here
     document.querySelector("#run").addEventListener("click", () => {
         const found = people.find($person => $person.firstname === "Jean" && $person.lastname === "Dupont");
-        let emails = [];
-        people.forEach(($person) => {
-            emails.push($person.email);
-        });
-        const indexEmail = emails.indexOf(found.email);
+        const indexEmail = people.indexOf(found);
         console.log(`Email: ${found.email} and its Index: ${indexEmail}`);
 
     })

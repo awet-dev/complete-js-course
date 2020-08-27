@@ -12,6 +12,6 @@
 (function() {
 
     // your code here
-    document.querySelector("#target").innerHTML = "owned"
+    document.getElementById("target").innerHTML = "owned"
 
 })();
