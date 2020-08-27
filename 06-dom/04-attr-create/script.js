@@ -10,7 +10,11 @@
 // You will have time to focus on it later.
 
 (function() {
-
     // your code here
+    let srcValue = document.querySelector("#source").getAttribute("data-image");
+    const newImage = document.createElement("img");
+    const parent = document.querySelector("#target");
+    newImage.setAttribute("src", `${srcValue}`);
+    parent.append(newImage);
 
 })();
