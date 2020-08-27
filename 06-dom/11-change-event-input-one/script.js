@@ -12,5 +12,16 @@
 (function() {
 
     // your code here
+    let i = 1;
+    const input = document.querySelector("#pass-one");
+    const counter = document.querySelector("#counter");
+    input.addEventListener("keypress", ()=> {
+        if (i < 11) {
+            counter.innerHTML = `${i}/10`;
+            i++;
+        } else {
+            input.setAttribute("maxlength", "10");
+        }
+    })
 
 })();
