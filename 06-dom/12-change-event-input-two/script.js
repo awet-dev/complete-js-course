@@ -12,5 +12,24 @@
 (function() {
 
     // your code here
+    let inputCounter = 0;
+    let numCounter = 0;
+    const input = document.querySelector("#pass-one");
+    const validator = document.querySelector("#validity");
+    input.addEventListener("keypress", ($event)=> {
+
+        if(isNaN($event.key)) {
+            inputCounter++;
+        } else {
+            numCounter++;
+            inputCounter += numCounter;
+        }
+        if ((inputCounter >= 8) && (numCounter >= 2)) {
+            validator.innerHTML = "Ok"
+        }
+    })
+
+
+
 
 })();
