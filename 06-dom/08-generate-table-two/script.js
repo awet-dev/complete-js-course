@@ -12,27 +12,46 @@
 (function() {
 
     function tableRow() {
+
         const target = document.querySelector("#target");
         let table = document.createElement("table");
         let tbody = document.createElement('tbody');
 
+
+        let tdArray = [];
+        let td;
         for (let i = 0; i < 10; i++) {
             let tr = document.createElement('tr');
             for (let j = 0; j < 10; j++) {
-                if (i === 1 && j === 10) {
-                    break
-                } else {
-                    let td = document.createElement('td');
-                    tr.appendChild(td)
-                }
+                td = document.createElement('td');
+                tr.appendChild(td);
+                tdArray.push(td);
             }
             tbody.appendChild(tr);
         }
+
+
         table.appendChild(tbody);
-        target.appendChild(table)
+        target.appendChild(table);
+
+
+        let multiplication = [];
+        let num;
+        for (let i = 1; i < 11; i++) {
+            for (let j = 1; j < 11; j++) {
+                num = i * j;
+                multiplication.push(num);
+            }
+        }
+
+        multiplication.forEach(($mun, index)=> {
+            tdArray[index].innerHTML = multiplication[index];
+        })
+        console.log(tdArray);
+        console.log(multiplication);
+
+
     }
     tableRow();
-
-
 
 })();
