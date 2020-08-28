@@ -12,21 +12,38 @@
 (function() {
 
     // your code here
-    const target = document.querySelector("#target");
-    const table = document.createElement("table");
+   /*
     let tdArray = [];
     let trArray = [];
-    for (let i = 0; i < 10; i++) {
-        for (let x = 0; x < 10; x++) {
+    for(let i = 0; i < 11; i++) {
+        for (let i = 0; i < 10; i++) {
             tdArray.push(document.createElement("td"));
+            trArray.push(document.createElement("tr"));
         }
-        trArray.push(document.createElement("tr"));
     }
     tdArray.forEach(($td, index)=> {
         trArray[index].append($td);
         table.append(trArray[index]);
     })
-    document.querySelector("#target").append(table);
+
+    */
+
+    // select target
+    const target = document.querySelector("#target");
+
+    // 1. create td and tr, then append td to tr
+    let tr1 = document.createElement("tr");
+    let tdTr1 = [];
+    for (let i = 0; i < 11; i++) {
+        tdTr1.push(document.createElement("td"));
+        tr1.appendChild(tdTr1[i]);
+    }
+
+    // 2. create table and append tr to it
+    let table = document.createElement("table");
+    table.appendChild(tr1);
+    target.appendChild(table);
+
 
 
 
