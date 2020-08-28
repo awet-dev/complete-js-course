@@ -30,7 +30,6 @@
             tbody.appendChild(tr);
         }
 
-
         table.appendChild(tbody);
         target.appendChild(table);
 
@@ -44,11 +43,10 @@
             }
         }
 
+
         multiplication.forEach(($mun, index)=> {
             tdArray[index].innerHTML = multiplication[index];
         })
-        console.log(tdArray);
-        console.log(multiplication);
 
 
     }
