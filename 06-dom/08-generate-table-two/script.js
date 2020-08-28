@@ -11,28 +11,28 @@
 
 (function() {
 
-    // select target
-    const tableRow = ()=> {
-
+    function tableRow() {
         const target = document.querySelector("#target");
-
-        // 1. create td and tr, then append td to tr
-        let tr1 = document.createElement("tr");
-        let tdTr1 = [];
-        for (let i = 0; i < 11; i++) {
-            tdTr1.push(document.createElement("td"));
-            tr1.appendChild(tdTr1[i]);
-        }
-
-        // 2. create table and append tr to it
         let table = document.createElement("table");
-        table.appendChild(tr1);
-        target.appendChild(table);
+        let tbody = document.createElement('tbody');
+
+        for (let i = 0; i < 10; i++) {
+            let tr = document.createElement('tr');
+            for (let j = 0; j < 10; j++) {
+                if (i === 1 && j === 10) {
+                    break
+                } else {
+                    let td = document.createElement('td');
+                    tr.appendChild(td)
+                }
+            }
+            tbody.appendChild(tr);
+        }
+        table.appendChild(tbody);
+        target.appendChild(table)
     }
-    // create 10 row
-    for (let i = 0; i < 11; i++) {
-        tableRow();
-    }
+    tableRow();
+
 
 
 })();
