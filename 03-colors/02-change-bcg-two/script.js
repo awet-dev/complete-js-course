@@ -12,8 +12,8 @@
 (function() {
 
     // your code here
-    let userColor = document.getElementById("color").value;
-    document.querySelector("#run").addEventListener("click", function () {
+    const userColor = document.getElementById("color").value;
+    document.querySelector("#run").addEventListener("click", ()=> {
         const body = document.querySelector("body");
        body.style.backgroundColor = userColor;
     })
