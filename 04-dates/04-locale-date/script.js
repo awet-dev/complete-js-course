@@ -11,17 +11,21 @@
 
 (function() {
 
-    // to change the content of a tag: document.getElementById("element-id").innerHTML = "new-value"
-    // your code here
-    let tagContent = document.getElementById("target");
-    let weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    let yearmonth = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-    let now = new Date();
-    let days = weekdays[now.getDay()];
-    let month = yearmonth[now.getMonth()];
-    weekdays.forEach(function () {
-        yearmonth.forEach(function () {
-            tagContent.innerHTML = `${days} ${now.getDate()} ${month} ${now.getFullYear()} ${now.getHours()}h${now.getMinutes()}`;
-        })
-    })
+    // select the html element
+    const tagContent = document.getElementById("target");
+
+    // create weekdays and yearmonth array
+    const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    const yearmonth = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+    // create date object
+    const now = new Date();
+
+    // convert day and month in readable name of time
+    const days = weekdays[now.getDay()];
+    const month = yearmonth[now.getMonth()];
+
+    // display the data to the html element
+    tagContent.innerHTML = `${days} ${now.getDate()} ${month} ${now.getFullYear()} ${now.getHours()}h${now.getMinutes()}`;
+
 })();
