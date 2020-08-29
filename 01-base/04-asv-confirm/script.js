@@ -9,14 +9,22 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function question() {
+(function() {
+    // question function
+    const question = ()=> {
 
-    let name = prompt("What is your name");
-    let age = prompt("How old are you?");
-    let place = prompt("Where do you live please?");
-    let answer = confirm(`Name: ${name}, Age: ${age}, Town: ${place} \n Please confirm ?` );
-    if (answer === false) {
+        // get information from the user
+        const name = prompt("What is your name?");
+        const age = prompt("How old are you?");
+        const place = prompt("Where do you live please?");
+
+        // ask the user to confirm
+        const confirmation = confirm(`Name: ${name}, Age: ${age} and ${place} \n If correct: press Ok, else" press Cancel`);
+
+        //if correct thanks him or her, else re-run the question again
+        confirmation? alert(`Thanks for the information ${name}`) : question();
+
+    };
     question();
-    }
 })();
 
