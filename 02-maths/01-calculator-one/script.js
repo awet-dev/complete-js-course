@@ -16,22 +16,22 @@
 
     document.getElementById("addition").addEventListener("click", function() {
         // perform an addition
-        console.log(inputOne + inputTwo);
+        alert(inputOne + inputTwo);
     });
 
     document.getElementById("subtraction").addEventListener("click", function() {
         // perform an subtraction
-        console.log(inputOne - inputTwo);
+        alert(inputOne - inputTwo);
     });
 
     document.getElementById("multiplication").addEventListener("click", function() {
         // perform an multiplication
-        console.log(inputOne * inputTwo);
+        alert(inputOne * inputTwo);
     });
 
     document.getElementById("division").addEventListener("click", function() {
         // perform an division
-        console.log(inputOne / inputTwo);
+        alert(inputOne / inputTwo);
     });
 
 })();

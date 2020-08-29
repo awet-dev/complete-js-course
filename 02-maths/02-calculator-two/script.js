@@ -11,23 +11,25 @@
 
 (function() {
     // to get the value of an input: document.getElementById("element-id").value
-    let v1 = parseFloat(document.getElementById("op-one").value);
-    let v2 = parseFloat(document.getElementById("op-two").value);
+    const inputOne = parseFloat(document.getElementById("op-one").value);
+    const inputTwo = parseFloat(document.getElementById("op-two").value);
 
     const performOperation = function(operation) {
         // perform the operation
         switch (operation) {
             case "addition":
-                alert(v1 + v2);
+                alert(inputOne + inputTwo);
                 break;
             case "subtraction":
-                alert(v1 - v2);
+                alert(inputOne - inputTwo);
                 break;
             case "multiplication":
-                alert(v1 * v2);
+                alert(inputOne * inputTwo);
                 break;
             case "division":
-                alert(v1 / v2);
+                alert(inputOne / inputTwo);
+                break;
+            default:
                 break;
         }
     };
