@@ -11,15 +11,14 @@
 
 (function() {
 
-    const getAnswer = () => {
-        let user = prompt("What is your name?");
-        if (user) {
-            alert(`Hello ${user}, How are you doing today?`);
+    const askName = ()=> {
+        let userName = prompt("What is your name sir/madam?");
+        if (userName) {
+            alert(`Hello ${userName}`);
         } else {
-            alert("Please Enter Your Name");
-            getAnswer();
+            askName();
         }
-    }
-    getAnswer();
+    };
+    askName();
 
 })();
