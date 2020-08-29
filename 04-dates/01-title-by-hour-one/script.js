@@ -11,16 +11,17 @@
 
 (function() {
 
-    // to change the content of a tag: document.getElementById("element-id").innerHTML = "new-value"
+    // select the html element
+    const target = document.getElementById("target");
 
-    // your code here
-
+    // create date object
     const now = new Date();
-    let tagContent = document.getElementById("target");
+
+    // check if it is daytime or nighttime
     if (now.getHours() < 18) {
-    tagContent.innerHTML = "Hello!";
+        target.innerHTML = "Hello!";
     } else {
-        tagContent.innerHTML = "Good Evening";
+        target.innerHTML = "Good Evening";
     }
 
 })();
