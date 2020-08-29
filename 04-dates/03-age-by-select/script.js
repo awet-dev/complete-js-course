@@ -22,12 +22,12 @@
     const month = yearmonth[m-1];
 
     const time = {
-        day: d,
+        days: d,
         months: month,
-        year: y
+        years: y
     };
     document.querySelector("#run").addEventListener("click", function () {
-        alert(`User birthday is ${time.day}/${time.months}/${time.year}`);
+        alert(`User birthday is ${time.days}/${time.months}/${time.years}`);
     })
 
 })();
