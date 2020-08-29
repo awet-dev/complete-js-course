@@ -9,23 +9,14 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
+(function () {
 
-  function getAnswer() {
-      let wantCake = prompt("Do you want some cake?");
-      if (wantCake) {
-          if (wantCake === "yes") {
-              alert("Congratulation!");
-          } else if (wantCake === "no") {
-              alert("More cake for me then please!")
-          } else {
-              alert("I don't know what you say?")
-          }
-      } else {
-          alert("Please Enter Your Answer")
-          getAnswer();
-      }
-  }
-  getAnswer();
+  // new function
+    const wantCake = prompt("Do you want cake?");
+    if (wantCake === "yes") {
+        alert("Congratulation, here you have it!");
+    } else {
+        alert("More cake for me then please!")
+    }
 
 })();
