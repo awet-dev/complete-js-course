@@ -12,13 +12,14 @@
 (function() {
 
     // to get the value of an input: document.getElementById("element-id").value
-    let values = document.getElementById("numbers").value;
+    const values = document.getElementById("numbers").value;
 
-    document.getElementById("run").addEventListener("click", function() {
+    // listen to the click and sort to the numbers in the input
+    document.getElementById("run").addEventListener("click", ()=> {
 
-        // your code here
-        let ar = values.split(', ');
-        alert(ar.sort((a,b)=>a-b));
+        // sort the inputArray by splitting it with comma
+        const inputArray = values.split(', ');
+        alert(inputArray.sort((a,b)=>a-b));
 
     });
 
