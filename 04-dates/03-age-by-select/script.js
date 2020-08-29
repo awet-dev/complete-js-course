@@ -13,17 +13,21 @@
 
     // your code here
     // Initialize a new birthday instance
-    let d = document.querySelector("#dob-day").value;
-    let m = document.querySelector("#dob-month").value;
-    let y = document.querySelector("#dob-year").value;
+    const d = document.querySelector("#dob-day").value;
+    const m = document.querySelector("#dob-month").value;
+    const y = document.querySelector("#dob-year").value;
 
-    let time = {
+    const yearmonth = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+    const month = yearmonth[m-1];
+
+    const time = {
         day: d,
-        month: m,
+        months: month,
         year: y
-    }
+    };
     document.querySelector("#run").addEventListener("click", function () {
-        alert(`User birthday is ${time.day}/${time.month}/${time.year}`);
+        alert(`User birthday is ${time.day}/${time.months}/${time.year}`);
     })
 
 })();
