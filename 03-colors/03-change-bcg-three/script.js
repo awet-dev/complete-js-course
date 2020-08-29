@@ -11,18 +11,21 @@
 
 (function() {
 
-    // your code here
+    // select the body and the button
     const body = document.querySelector("body");
     const runBtn = document.querySelector("#run");
 
+    // generate random color function
     const getRandom = () => {
-        let letters = "0123456789ABCDEF";
+        const letters = "0123456789ABCDEF";
         let color = "#";
         for (let i = 0; i < 6; i++) {
             color += letters[Math.floor(Math.random() * 16)];
         }
         return color;
-    }
+    };
+
+    // listen to the click event to run the getRandom function
     runBtn.addEventListener("click", function () {
         body.style.backgroundColor = getRandom();
     });
