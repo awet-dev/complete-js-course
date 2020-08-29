@@ -11,26 +11,27 @@
 
 (function() {
     // to get the value of an input: document.getElementById("element-id").value
-    let v1 = parseFloat(document.getElementById("op-one").value);
-    let v2 = parseFloat(document.getElementById("op-two").value);
+    const inputOne = parseFloat(document.getElementById("op-one").value);
+    const inputTwo = parseFloat(document.getElementById("op-two").value);
+
     document.getElementById("addition").addEventListener("click", function() {
         // perform an addition
-        alert(v1 + v2);
+        console.log(inputOne + inputTwo);
     });
 
     document.getElementById("subtraction").addEventListener("click", function() {
         // perform an subtraction
-        alert(v1 - v2);
+        console.log(inputOne - inputTwo);
     });
 
     document.getElementById("multiplication").addEventListener("click", function() {
         // perform an multiplication
-        alert(v1 * v2);
+        console.log(inputOne * inputTwo);
     });
 
     document.getElementById("division").addEventListener("click", function() {
         // perform an division
-        alert(v1 / v2);
+        console.log(inputOne / inputTwo);
     });
 
 })();
