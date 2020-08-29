@@ -11,23 +11,19 @@
 
 (function() {
 
-    // your code here
     // Initialize a new birthday instance
-    const d = document.querySelector("#dob-day").value;
-    const m = document.querySelector("#dob-month").value;
-    const y = document.querySelector("#dob-year").value;
+    const day = document.querySelector("#dob-day").value;
+    const monthNumber = document.querySelector("#dob-month").value;
+    const year = document.querySelector("#dob-year").value;
 
+    // create months of the year
     const yearmonth = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
-    const month = yearmonth[m-1];
+    // convert the number month to text form
+    const month = yearmonth[monthNumber-1];
 
-    const time = {
-        days: d,
-        months: month,
-        years: y
-    };
     document.querySelector("#run").addEventListener("click", function () {
-        alert(`User birthday is ${time.days}/${time.months}/${time.years}`);
+        alert(`User birthday is ${day}/${month}/${year}`);
     })
 
 })();
