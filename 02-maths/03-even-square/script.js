@@ -11,10 +11,11 @@
 
 (function() {
 
-    document.getElementById("run").addEventListener("click", function() {
-
-       for (let x = 1; (x*x) < 21; x++)
-           alert(x*x)
+    document.getElementById("run").addEventListener("click", ()=> {
+        // generate square numbers between 1 and 21
+       for(let x = 1; x*x < 21; x++) {
+           alert(x * x)
+       }
     });
 
 })();
