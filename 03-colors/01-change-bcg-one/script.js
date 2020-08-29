@@ -12,7 +12,7 @@
     // to get the a section in the DOM document.document.querySelector("element")
     const body = document.querySelector("body");
     // your code here
-    const changeColor = (bgColor) => {
+    const changeColor = bgColor => {
         // perform the operation
         body.style.backgroundColor = bgColor;
     };
