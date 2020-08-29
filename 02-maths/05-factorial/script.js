@@ -12,22 +12,23 @@
 (function() {
 
     // to get the value of an input: document.getElementById("element-id").value
-    let value1 = parseFloat(document.getElementById("number").value);
+    const valueOne = parseInt(document.getElementById("number").value);
 
     document.getElementById("run").addEventListener("click", function() {
 
         // your code here
-        function factorial(value1) {
-            let result = value1;
-            if (value1 === 0 || value1 === 1)
-                return 1;
-            while (value1 > 1) {
-                value1--;
-                result *= value1;
+        const factorial = valueOne => {
+            let result = valueOne;
+            if (valueOne === 0 || valueOne === 1) {
+                    return 1;
+                }
+            while (valueOne > 1) {
+                valueOne--;
+                result *= valueOne;
             }
             return result;
-        }
-        alert(factorial(value1));
+        };
+        alert(factorial(valueOne));
     });
 
 })();
