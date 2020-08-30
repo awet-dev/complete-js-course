@@ -11,7 +11,7 @@
 
 (function() {
 
-    let fruits = [
+    const fruits = [
         "pomme",
         "poire",
         "fraise",
@@ -26,9 +26,9 @@
         "cerise",
     ];
 
-    // your code here
+    // listen to the click event and loop through fruit array with forEach loop and display the fruits
     document.querySelector("#run").addEventListener("click", () => {
-        fruits.forEach(($fruit) => {
+        fruits.forEach($fruit => {
             console.log($fruit);
         })
     });
