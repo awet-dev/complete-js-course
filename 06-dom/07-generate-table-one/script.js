@@ -11,20 +11,26 @@
 
 (function() {
 
-    // your code here
+    // select the target where the table will be and create table and tbody
     const target = document.querySelector("#target");
     const table = document.createElement("table");
-    let tdArray = [];
-    let trArray = [];
-    for (let i = 0; i < 10; i++) {
-        tdArray.push(document.createElement("td"));
+    const tbody = document.createElement('tbody');
 
-        trArray.push(document.createElement("tr"));
+    // use for loop to make 10 rows with 10 column each
+    for (let i = 0; i < 10; i++) {
+        let tr = document.createElement('tr');
+        for (let j = 0; j < 1; j++) {
+            let td = document.createElement('td');
+
+            // append td to the tr parent
+            tr.appendChild(td);
+        }
+        // append tr to the tbody parent
+        tbody.appendChild(tr);
     }
-    tdArray.forEach(($td, index)=> {
-        trArray[index].append($td);
-        table.append(trArray[index]);
-    })
-    document.querySelector("#target").append(table);
+
+    // append tbody to the table and table to the target
+    table.appendChild(tbody);
+    target.appendChild(table);
 
 })();

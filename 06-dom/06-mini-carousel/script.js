@@ -34,6 +34,7 @@
             image.setAttribute("src", `${gallery[srcIndex]}`);
             srcIndex++
         }
+
     })
 
 })();
