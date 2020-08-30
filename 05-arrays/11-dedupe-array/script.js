@@ -11,7 +11,7 @@
 
 (function() {
 
-    var fruits = [
+    const fruits = [
         "cerise",
         "durian",
         "pomme",
@@ -28,9 +28,9 @@
         "cerise",
     ];
 
-    // your code here
+    // listen to the click event and remove duplicated fruit in the fruit array
     document.querySelector("#run").addEventListener("click", () => {
-        let unique = [...new Set(fruits)];
+        const unique = [...new Set(fruits)];
         console.log(unique);
     })
 
