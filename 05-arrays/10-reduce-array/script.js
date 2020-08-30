@@ -11,7 +11,7 @@
 
 (function() {
 
-    let people = [
+    const people = [
         {
             firstname: "Grenville",
             lastname: "Stive",
@@ -89,13 +89,15 @@
         },
     ];
 
-    // your code here
+    // listen to the click event and get each person's age and add it to peopleAges array
     document.querySelector("#run").addEventListener("click", () => {
         let peopleAges = [];
-        people.forEach(($age) => {
-            peopleAges.push($age.age);
-        })
-        let totalAge = peopleAges.reduce((a, b) => a + b, 0);
+        people.forEach($person => {
+            peopleAges.push($person.age);
+        });
+
+        // get the sum of ages using reduce method to the peopleAges array
+        const totalAge = peopleAges.reduce((a, b) => a + b, 0);
         console.log(totalAge);
     })
 
