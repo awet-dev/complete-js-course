@@ -11,7 +11,7 @@
 
 (function() {
 
-    let fruits = [
+    const fruits = [
         "apple",
         "pear",
         "raspberry",
@@ -26,9 +26,7 @@
         "cherry",
     ];
 
-    // your code here
-    document.querySelector("#run").addEventListener("click", () => {
-        console.log(fruits[3]);
-    })
+    // display the fourth item of the fruit array
+    document.querySelector("#run").addEventListener("click", () => console.log(fruits[3]))
 
 })();
