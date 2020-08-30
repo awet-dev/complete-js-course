@@ -11,7 +11,7 @@
 
 (function() {
 
-    let people = [
+    const people = [
         {
             firstname: "Garald",
             lastname: "Freschi",
@@ -39,10 +39,10 @@
         },
     ];
 
-    // your code here
+    // listen to the click event and display the firstname of the people array
     document.querySelector("#run").addEventListener("click", () => {
-        people.forEach(($person,index) => {
-            console.log(people[index].firstname);
+        people.forEach($person => {
+            console.log($person.firstname);
         })
     });
 
