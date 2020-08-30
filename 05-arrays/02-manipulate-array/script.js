@@ -11,7 +11,7 @@
 
 (function() {
 
-    let fruits = [
+    const fruits = [
         "pomme",
         "poire",
         "fraise",
@@ -23,13 +23,17 @@
         "raisin",
         "cerise",
     ];
-    // your code here
+    // listen to the click event
     document.querySelector("#run").addEventListener("click", () => {
+
+        // manipulate the array
         fruits.shift();
         fruits.pop();
-        fruits.unshift("banana")
+        fruits.unshift("banana");
         fruits.push("kiwi");
-        document.querySelector("#display").textContent = `${fruits}`;
+
+        // display the result in console
+        console.log(fruits);
     })
 
 })();
