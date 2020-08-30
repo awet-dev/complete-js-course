@@ -11,7 +11,7 @@
 
 (function() {
 
-    let people = [
+    const people = [
         {
             firstname: "Bradford",
             lastname: "Coldbath",
@@ -89,12 +89,15 @@
         },
     ];
 
-    // your code here
+    // listen to the click event and display the email address of specific person
     document.querySelector("#run").addEventListener("click", () => {
+
+        // get the email with the find method and the index of the email
         const found = people.find($person => $person.firstname === "Jean" && $person.lastname === "Dupont");
         const indexEmail = people.indexOf(found);
-        console.log(`Email: ${found.email} and its Index: ${indexEmail}`);
 
+        // display in the console the result in with text template ``
+        console.log(`Email: ${found.email} and its Index: ${indexEmail}`);
     })
 
 })();
