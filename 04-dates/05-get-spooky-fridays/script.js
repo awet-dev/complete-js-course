@@ -10,17 +10,22 @@
 // You will have time to focus on it later.
 
 (function() {
-    let userInputYear;
 
+    // select the html element
+    const userInputYear = document.getElementById("year").value;
 
+    // listen to the click event and perform some tasks
     document.querySelector("#run").addEventListener("click", () => {
-        userInputYear = document.getElementById("year").value;
+
+        // create result holder variable
         let result = "";
-        for (let i = 0; i <= 11; i++){
-            let day = new Date(userInputYear, i, 13);
-            let weekday = day.getDay();
+
+        // loop in 12 months to check whether the friday is in the 13th of the month in the given year
+        for (let i = 0; i <= 11; i++) {
+            const day = new Date(userInputYear, i, 13);
+            const weekday = day.getDay();
             if (weekday === 5){
-                result += (day.toLocaleString("default", {month: "long"}) + "\n");
+                result += `${day.toLocaleString("default", {month: "long"})} \n`;
             }
         }
         alert(result);
