@@ -13,11 +13,20 @@
 
     // your code here
     let i = 1;
+
+    // select the input and counter elements
     const input = document.querySelector("#pass-one");
     const counter = document.querySelector("#counter");
+
+    // listen to the keypress event
     input.addEventListener("keypress", ()=> {
+
+        /* check if number of key press is less than 11 times, so display number of times key pressed
+        else set maxlength of input to limit the times of input
+         */
         if (i < 11) {
             counter.innerHTML = `${i}/10`;
+            // increment number of keypress by one each time key pressed
             i++;
         } else {
             input.setAttribute("maxlength", "10");
