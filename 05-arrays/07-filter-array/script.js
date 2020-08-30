@@ -11,7 +11,7 @@
 
 (function() {
 
-    let people = [
+    const people = [
         {
             firstname: "Dreddy",
             lastname: "Nussgen",
@@ -90,10 +90,10 @@
     ];
 
 
-    // your code here
+    // listen to the click event and filter the over age people
     document.querySelector("#run").addEventListener("click", () => {
-        const underAge = people.filter($person => $person.age > 18);
-        console.log(underAge);
+        const overAge = people.filter($person => $person.age > 18);
+        console.log(overAge);
     });
 
 })();
