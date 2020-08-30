@@ -11,7 +11,7 @@
 
 (function() {
 
-    // your code here
+    // initiate the iterator
     let i = 1;
 
     // select the input and counter elements

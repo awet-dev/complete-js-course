@@ -11,20 +11,29 @@
 
 (function() {
 
-    // your code here
+    // initiate the general input counter and number counter only
     let inputCounter = 0;
     let numCounter = 0;
+
+    // select input and validator elements
     const input = document.querySelector("#pass-one");
     const validator = document.querySelector("#validity");
-    input.addEventListener("keypress", ($event)=> {
 
+    // listen to the keypress event
+    input.addEventListener("keypress", $event => {
+
+        // check if input value is number or not, accordingly increment the iterator
         if(isNaN($event.key)) {
             inputCounter++;
         } else {
             numCounter++;
+            // if number add the number iterator to the general iterator
             inputCounter += numCounter;
         }
-        if ((inputCounter >= 8) && (numCounter >= 2)) {
+        /* then check if general iterator is at least equal to 8 and number iterator is at least 2,
+         so then convert the validator to "Ok"
+         */
+        if (inputCounter >= 8 && numCounter >= 2) {
             validator.innerHTML = "Ok"
         }
     })
