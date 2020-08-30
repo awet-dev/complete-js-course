@@ -10,11 +10,21 @@
 // You will have time to focus on it later.
 
 (function() {
-    // your code here
-    let srcValue = document.querySelector("#source").getAttribute("data-image");
-    const newImage = document.createElement("img");
+
+    // select an element to be the parent to the image element
     const parent = document.querySelector("#target");
+
+    // create image element
+    const newImage = document.createElement("img");
+
+    // get image src value from data-image attribute
+    const srcValue = document.querySelector("#source").getAttribute("data-image");
+
+    // set the srcValue to the src attribute of newly created image element
     newImage.setAttribute("src", `${srcValue}`);
+
+    // append the child image to the parent
     parent.append(newImage);
+
 
 })();

@@ -11,9 +11,9 @@
 
 (function() {
 
-    // your code here
-    const paragraph = document.querySelectorAll(".target");
-    paragraph.forEach(($p) => {
+    // change the text content of the elements with target class name
+    const paragraphs = document.querySelectorAll(".target");
+    paragraphs.forEach($p => {
         $p.innerHTML = "owned"
     })
 

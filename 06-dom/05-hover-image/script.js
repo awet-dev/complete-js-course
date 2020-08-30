@@ -11,15 +11,19 @@
 
 (function() {
 
-    // your code here
-    let image = document.querySelector("img");
-    let srcValue1 = image.getAttribute("src")
-    let srcValue = image.getAttribute("data-hover");
+    // select the image element
+    const image = document.querySelector("img");
+
+    // get the value to src attribute from src and data-hover
+    const srcValueOne = image.getAttribute("src");
+    const srcValue = image.getAttribute("data-hover");
+
+    // listen to the mouseover mouseout events and accordingly change the src value
     image.addEventListener("mouseover", ()=> {
         image.setAttribute("src", `${srcValue}`);
-    })
+    });
     image.addEventListener("mouseout", ()=> {
-        image.setAttribute("src", `${srcValue1}`);
+        image.setAttribute("src", `${srcValueOne}`);
     })
 
 

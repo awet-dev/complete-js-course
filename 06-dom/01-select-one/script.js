@@ -11,7 +11,7 @@
 
 (function() {
 
-    // your code here
+    // change the target text content
     document.getElementById("target").innerHTML = "owned"
 
 })();
