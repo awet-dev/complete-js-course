@@ -11,7 +11,7 @@
 
 (function() {
 
-    var fruits = [
+    const fruits = [
         "apple",
         "perry",
         "strawberry",
@@ -26,7 +26,7 @@
         "cherry",
     ];
 
-    // your code here
+    // listen to the click event and check if apple is in the fruit array or not
     document.querySelector("#run").addEventListener("click", () => {
         if (fruits.includes("apple")) {
             console.log("Yes");
