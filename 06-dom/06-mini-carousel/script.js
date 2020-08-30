@@ -11,7 +11,7 @@
 
 (function() {
 
-    let gallery= [
+    const gallery = [
         "../../_shared/img/bell.svg",
         "../../_shared/img/clock.svg",
         "../../_shared/img/compass.svg",
@@ -19,18 +19,20 @@
         "../../_shared/img/map.svg",
     ];
 
-    // your code here
+    // select the image element and initiate the srcIndex of the gallery array
     const image = document.querySelector("img");
-    let $imgSrc = 1
+    let srcIndex = 1;
+
+    // listen to the click event to change the src in every click
     document.querySelector("#next").addEventListener("click", ()=> {
 
-        if ($imgSrc < gallery.length) {
-            image.setAttribute("src", `${gallery[$imgSrc]}`);
-            $imgSrc++
+        if (srcIndex < gallery.length) {
+            image.setAttribute("src", `${gallery[srcIndex]}`);
+            srcIndex++
         } else {
-            $imgSrc = 0;
-            image.setAttribute("src", `${gallery[$imgSrc]}`);
-            $imgSrc++
+            srcIndex = 0;
+            image.setAttribute("src", `${gallery[srcIndex]}`);
+            srcIndex++
         }
     })
 
