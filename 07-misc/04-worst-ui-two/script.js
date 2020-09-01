@@ -31,32 +31,38 @@
 
 
     btnOne.addEventListener("click", ()=> {
-        btnOneMin++;
-        if (btnOneMin <= btnOneMax) {
+
+        if (btnOneMin < btnOneMax) {
+            btnOneMin++;
             target.innerHTML = `0${btnOneMin} ${btnTwoMin} ${btnThreeMin} ${btnFourMin}`;
         }
     });
 
     btnTwo.addEventListener("click", ()=> {
-        btnTwoMin++;
-        if (btnTwoMin <= btnTwoMax) {
-            target.innerHTML = `0${btnOneMin} ${btnTwoMin} ${btnThreeMin} ${btnFourMin}`;
+        if (btnTwoMin < btnTwoMax) {
+            btnTwoMin++;
         }
     });
 
     btnThree.addEventListener("click", ()=> {
-        btnThreeMin++;
-        if (btnThreeMin <= btnThreeMax) {
-            target.innerHTML = `0${btnOneMin} ${btnTwoMin} ${btnThreeMin} ${btnFourMin}`;
+
+        if (btnThreeMin < btnThreeMax) {
+            btnThreeMin++;
         }
     });
 
     btnFour.addEventListener("click", ()=> {
-        btnFourMin++;
-        if (btnFourMin <= btnFourMax) {
-            target.innerHTML = `0${btnOneMin} ${btnTwoMin} ${btnThreeMin} ${btnFourMin}`;
+
+        if (btnFourMin < btnFourMax) {
+            btnFourMin++;
         }
     });
+
+    if (btnTwoMin < 10) {
+        target.innerHTML = `0${btnOneMin} 0${btnTwoMin} ${btnThreeMin} ${btnFourMin}`;
+    } else {
+        target.innerHTML = `0${btnOneMin} ${btnTwoMin} ${btnThreeMin} ${btnFourMin}`;
+    }
 
 
 })();
