@@ -28,7 +28,7 @@
         } else {
             numCounter++;
             // if number add the number iterator to the general iterator
-            inputCounter += numCounter;
+            inputCounter++;
         }
         /* then check if general iterator is at least equal to 8 and number iterator is at least 2,
          so then convert the validator to "Ok"
@@ -36,7 +36,8 @@
         if (inputCounter >= 8 && numCounter >= 2) {
             validator.innerHTML = "Ok"
         }
-    })
+    });
+
 
 
 })();
