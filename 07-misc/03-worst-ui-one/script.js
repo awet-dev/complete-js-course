@@ -11,6 +11,15 @@
 
 (function() {
 
-    // your code here
+    // select the input element of the html
+    let input = document.querySelector('#slider'),
+        target = document.querySelector('#target');
+
+    target.innerHTML = `0${input.value}`;
+
+// listen to the input change to display the corresponding value in the target;
+    input.addEventListener('input', function () {
+        target.innerHTML = `0${input.value}`;
+    }, false);
 
 })();

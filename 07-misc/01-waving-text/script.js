@@ -35,7 +35,7 @@
         if (index % 2 === 0) {
             span.style.fontSize = `${index}rem`;
         } else {
-            span.style.fontSize = `${index-1}rem`;
+            span.style.fontSize = `${index/1.5}rem`;
         }
     });
 
