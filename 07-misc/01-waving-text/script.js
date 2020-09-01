@@ -14,31 +14,27 @@
     // select the target element of the DOM
     const target = document.querySelector("#target");
 
-
-    // set new text content to the target
-
-
-
+    // create new text to in str variable and split it use split method
     const str = "Make wave effect on this paragraph using font size.";
     const strArray = str.split(" ");
 
-    console.log(strArray);
+    // creat empty array to put every word in and make the target content empty
     let spanArray = [];
-    strArray.forEach($word => {
+    target.innerHTML = "";
+
+    // loop through the strArray to create span and update it with the word of the array
+    strArray.forEach(($word, index) => {
         const span = document.createElement("span");
         span.innerHTML = $word;
         spanArray.push(span);
+
+        // update the target and the make variation on the style of the fontsize
+        target.appendChild(span);
+        if (index % 2 === 0) {
+            span.style.fontSize = `${index}rem`;
+        } else {
+            span.style.fontSize = `${index-1}rem`;
+        }
     });
-    target.innerHTML = "";
-    spanArray.forEach(($span,index) => {
-       target.appendChild($span);
-       if (index % 2 === 0) {
-           $span.style.fontSize = 2 + "rem";
-       } else {
-           $span.style.fontSize = 3 + "rem"
-       }
-    })
-
-
 
 })();
