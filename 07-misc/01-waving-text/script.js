@@ -11,6 +11,7 @@
 
 (function() {
 
+
     // select the target element of the DOM
     const target = document.querySelector("#target");
 
@@ -30,11 +31,13 @@
 
         // update the target and the make variation on the style of the fontsize
         target.appendChild(span);
+        span.style.marginRight = `1rem`;
         if (index % 2 === 0) {
             span.style.fontSize = `${index}rem`;
         } else {
             span.style.fontSize = `${index-1}rem`;
         }
     });
+
 
 })();

@@ -22,7 +22,7 @@
     const massage = 'I am a text that will appear in a "typewriter" effect, a bit like in black films. Except ... I don\'t know who the murderer is! Is there really one? Does he live at 21? What mysteries!'; /* The text */
 
     // set how fast the text will display
-    const speed = 40;
+    const speed = 70;
 
     // function for the type writer effect
     function typeWriterEffect() {

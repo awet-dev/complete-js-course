@@ -11,6 +11,22 @@
 
 (function() {
 
+    /*
+    (function() {
+    var multTable = {};
+    let scrum = ""
+    for (var v = 1; v < 11; v++) {
+        multTable[v] = {};
+        scrum = scrum + "<tr>";
+        for (var i = 1; i < 11; i++) {
+            multTable[v][i] = i * v;
+            scrum = scrum + "<td>" + multTable[v][i] + "</td>";
+        }scrum = scrum + "</tr>"
+    }
+    document.getElementById("target").innerHTML = "<table id='tbody'>" + scrum + "</table>"
+})();
+     */
+
     function tableRow() {
 
         // select the target and create table and tbody elements
