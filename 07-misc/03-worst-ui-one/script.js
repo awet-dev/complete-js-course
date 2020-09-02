@@ -17,7 +17,7 @@
 
     target.innerHTML = `0${input.value}`;
 
-// listen to the input change to display the corresponding value in the target;
+    // listen to the input change to display the corresponding value in the target;
     input.addEventListener('input', function () {
         target.innerHTML = `0${input.value}`;
     }, false);

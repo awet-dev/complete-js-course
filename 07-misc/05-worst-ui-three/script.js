@@ -18,13 +18,11 @@
         const element = document.getElementById("target");
         const funcNameHere = function () {
             element.innerHTML = `${i}%`;
-
             if (i === 10) {
                 clearInterval(this);
             } else {
                 i++;
             }
-
         };
         // This block will be executed 100 times.
         setInterval(funcNameHere, 70);
@@ -73,63 +71,58 @@
     stopOne.addEventListener("click", ()=> {
         clearInterval(counterOne);
         stopOneValue = btnOneMin;
-        target.innerHTML = `0${stopOneValue} 00 00 00`;
+        target.innerHTML = `0${btnOneMin} ${btnTwoMin} ${btnThreeMin} ${btnFourMin}`;
     });
     // counter 2nd and its stop event
     const counterTwo = setInterval(() => {
         if (btnTwoMin < btnTwoMax) {
             btnTwoMin++;
-            btnTwo.value = btnTwoMin;
-        } else {
-            btnTwoMin = 0;
             if (btnTwoMin < 10) {
                 btnTwoMin = `0${btnTwoMin}`;
             }
-            btnTwo.innerHTML = btnTwoMin;
+            btnTwo.value = btnTwoMin;
+        } else {
+            btnTwoMin = 0;
         }
     }, 50);
     stopTwo.addEventListener("click", ()=> {
         clearInterval(counterTwo);
         stopTwoValue = btnTwoMin;
-        target.innerHTML = `0${stopOneValue} ${stopTwoValue} 00 00`;
+        target.innerHTML = `0${btnOneMin} ${btnTwoMin} ${btnThreeMin} ${btnFourMin}`;
     });
     // counter 3rd and its stop event
     const counterThree = setInterval(() => {
         if (btnThreeMin < btnThreeMax) {
             btnThreeMin++;
-            btnThree.value = btnThreeMin;
-        } else {
-            btnThreeMin = 0;
             if (btnThreeMin < 10) {
                 btnThreeMin = `0${btnThreeMin}`;
             }
-            btnThree.innerHTML = btnThreeMin;
+            btnThree.value = btnThreeMin;
+        } else {
+            btnThreeMin = 0;
         }
     }, 50);
     stopThree.addEventListener("click", ()=> {
         clearInterval(counterThree);
         stopThreeValue = btnThreeMin;
-        target.innerHTML = `0${stopOneValue} ${stopTwoValue} ${stopThreeValue} 00`;
+        target.innerHTML = `0${btnOneMin} ${btnTwoMin} ${btnThreeMin} ${btnFourMin}`;
     });
     // counter 4th and its stop event
     const counterFour = setInterval(() => {
         if (btnFourMin < btnFourMax) {
             btnFourMin++;
-            btnFour.value = btnFourMin;
-        } else {
-            btnFourMin = 0;
             if (btnFourMin < 10) {
                 btnFourMin = `0${btnFourMin}`;
             }
-            btnFour.innerHTML = btnFourMin;
+            btnFour.value = btnFourMin;
+        } else {
+            btnFourMin = 0;
         }
     }, 50);
     stopFour.addEventListener("click", ()=> {
         clearInterval(counterFour);
-        stopFourValue = btnFourMin;
-        target.innerHTML = `0${stopOneValue} ${stopTwoValue} ${stopThreeValue} ${stopFourValue}`;
+        target.innerHTML = `0${btnOneMin} ${btnTwoMin} ${btnThreeMin} ${btnFourMin}`;
     });
-
 
 
 

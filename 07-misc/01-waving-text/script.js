@@ -13,7 +13,7 @@
 
 
     // select the target and set text to it
-    let target = document.querySelector("#target");
+    const target = document.querySelector("#target");
     target.innerHTML = "Create wave effect to the text using font-size.";
 
     // create empty array for the newly created spans
