@@ -9,7 +9,7 @@
 // NOTE: don't focus on the existing code structure for now.
 // You will have time to focus on it later.
 
-(function() {
+(()=> {
 
     /*
     (function() {
@@ -63,7 +63,8 @@
         // place the result of the multiplication to the respective position in the table
         multiplication.forEach(($mun, index)=> {
             tdArray[index].innerHTML = multiplication[index];
-        })
+        });
+
     }
 
     tableRow();

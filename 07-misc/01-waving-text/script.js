@@ -25,6 +25,7 @@
     });
 
     target.innerHTML = "";
+
     spanArray.forEach(($span, index)=> {
 
         let fontSize;
@@ -32,11 +33,11 @@
             fontSize = Math.floor(Math.random()*6 + 1);
         }
         target.appendChild($span);
+
         spanArray[index].style.fontSize = `${fontSize}rem`;
-    })
 
 
-
+    });
 
 
 })();
