@@ -11,6 +11,23 @@
 
 (function() {
 
-    // your code here
+    // listen to the window loading
+    window.addEventListener("load", ()=> {
+        let numPicked = Math.floor(Math.random()*100);
+        let counter = 0;
+        const repeatFun = ()=> {
+            let userAnswer = prompt("Guess a number between 1 and 100");
+            counter++;
+            if (numPicked === parseInt(userAnswer)) {
+                alert(`that's it! you get it in ${counter} try`);
+            } else if (numPicked > parseInt(userAnswer)) {
+                alert("higher");
+                repeatFun();
+            } else {
+                alert("lower");
+                repeatFun();
+            }
+        }; repeatFun();
+    })
 
 })();
