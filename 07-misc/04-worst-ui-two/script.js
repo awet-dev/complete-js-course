@@ -15,65 +15,60 @@
     const target = document.querySelector("#target");
 
     // select the buttons with their ids
-    const btnOne = document.querySelector("#part-one");
-    const btnTwo = document.querySelector("#part-two");
-    const btnThree = document.querySelector("#part-three");
-    const btnFour = document.querySelector("#part-four");
+    const buttons = document.querySelectorAll("button");
 
-    // get the data-min of each button with let b/c it will increment on each click
-    let btnOneMin = btnOne.getAttribute("data-min");
-    let btnTwoMin = btnTwo.getAttribute("data-min");
-    let btnThreeMin = btnThree.getAttribute("data-min");
-    let btnFourMin = btnFour.getAttribute("data-min");
-
-    // get the data-max of each button with const. fixed
-    const btnOneMax = btnOne.getAttribute("data-max");
-    const btnTwoMax = btnTwo.getAttribute("data-max");
-    const btnThreeMax = btnThree.getAttribute("data-max");
-    const btnFourMax = btnFour.getAttribute("data-max");
+    // get the data-min and data-max of each button with
+    let btnMinArray = [];
+    let btnMaxArray = [];
+    buttons.forEach($btn=> {
+        let inputMin = $btn.getAttribute("data-min");
+        const inputMax = $btn.getAttribute("data-max");
+        btnMinArray.push(inputMin);
+        btnMaxArray.push(inputMax);
+    });
 
     // listen to the first btn click and update the target and its btn value and the data-min as wel.
-    btnOne.addEventListener("click", ()=> {
-        if (btnOneMin < btnOneMax) {
-            btnOneMin++;
-            btnOne.innerHTML = btnOneMin;
-            target.innerHTML = `0${btnOneMin} ${btnTwoMin} ${btnThreeMin} ${btnFourMin}`;
+    buttons[0].addEventListener("click", ()=> {
+        if (btnMinArray[0] < btnMaxArray[0]) {
+            btnMinArray[0]++;
+            buttons[0].innerHTML = btnMinArray[0];
+            target.innerHTML = `0${btnMinArray[0]} ${btnMinArray[1]} ${btnMinArray[2]} ${btnMinArray[3]}`;
         }
     });
 
     // listen to the 2nd btn click and update the target and its btn value and the data-min as wel.
-    btnTwo.addEventListener("click", ()=> {
-        if (btnTwoMin < btnTwoMax) {
-            btnTwoMin++;
-            if (btnTwoMin < 10) {
-                btnTwoMin = `0${btnTwoMin}`
+    buttons[1].addEventListener("click", ()=> {
+        if (btnMinArray[1] < btnMaxArray[1]) {
+            btnMinArray[1]++;
+            if (btnMinArray[1] < 10) {
+                btnMinArray[1] = `0${btnMinArray[1]}`
             }
-            btnTwo.innerHTML = btnTwoMin;
-            target.innerHTML = `0${btnOneMin} ${btnTwoMin} ${btnThreeMin} ${btnFourMin}`;
+            buttons[1].innerHTML = btnMinArray[1];
+            target.innerHTML = `0${btnMinArray[0]} ${btnMinArray[1]} ${btnMinArray[2]} ${btnMinArray[3]}`;
         }
     });
 
     // listen to the 3rd btn click and update the target and its btn value and the data-min as wel.
-    btnThree.addEventListener("click", ()=> {
-        if (btnThreeMin < btnThreeMax) {
-            btnThreeMin++;
-            if (btnThreeMin < 10) {
-                btnThreeMin = `0${btnThreeMin}`
+    buttons[2].addEventListener("click", ()=> {
+        if (btnMinArray[2] < btnMaxArray[2]) {
+            btnMinArray[2]++;
+            if (btnMinArray[2] < 10) {
+                btnMinArray[2] = `0${btnMinArray[2]}`
             }
-            btnThree.innerHTML = btnThreeMin;
-            target.innerHTML = `0${btnOneMin} ${btnTwoMin} ${btnThreeMin} ${btnFourMin}`;
+            buttons[2].innerHTML = btnMinArray[2];
+            target.innerHTML = `0${btnMinArray[0]} ${btnMinArray[1]} ${btnMinArray[2]} ${btnMinArray[3]}`;
         }
     });
 
     // listen to the 4th btn click and update the target and its btn value and the data-min as wel.
-    btnFour.addEventListener("click", ()=> {
-        if (btnFourMin < btnFourMax) {
-            btnFourMin++;
-            if (btnFourMin < 10) {
-                btnFourMin = `0${btnFourMin}`
+    buttons[3].addEventListener("click", ()=> {
+        if (btnMinArray[3] < btnMaxArray[3]) {
+            btnMinArray[3]++;
+            if (btnMinArray[3] < 10) {
+                btnMinArray[3] = `0${btnMinArray[3]}`
             }
-            btnFour.innerHTML = btnFourMin;
-            target.innerHTML = `0${btnOneMin} ${btnTwoMin} ${btnThreeMin} ${btnFourMin}`;
+            buttons[3].innerHTML = btnMinArray[3];
+            target.innerHTML = `0${btnMinArray[0]} ${btnMinArray[1]} ${btnMinArray[2]} ${btnMinArray[3]}`;
         }
     });
 
