@@ -12,5 +12,126 @@
 (function() {
 
     // your code here
+    /*
+    const counter = ()=> {
+        let i = 0;
+        const element = document.getElementById("target");
+        const funcNameHere = function () {
+            element.innerHTML = `${i}%`;
+
+            if (i === 10) {
+                clearInterval(this);
+            } else {
+                i++;
+            }
+
+        };
+        // This block will be executed 100 times.
+        setInterval(funcNameHere, 70);
+        funcNameHere();
+    };
+    counter();
+     */
+    // select the target and the stop buttons
+    const target = document.querySelector("#target");
+
+    const stopOne = document.querySelector("#fix-part-one");
+    const stopTwo = document.querySelector("#fix-part-two");
+    const stopThree = document.querySelector("#fix-part-three");
+    const stopFour = document.querySelector("#fix-part-four");
+
+
+    // select the buttons with their ids
+    const btnOne = document.querySelector("#part-one");
+    const btnTwo = document.querySelector("#part-two");
+    const btnThree = document.querySelector("#part-three");
+    const btnFour = document.querySelector("#part-four");
+
+    // get the data-min of each button with let b/c it will increment on each click
+    let btnOneMin = btnOne.getAttribute("data-min");
+    let btnTwoMin = btnTwo.getAttribute("data-min");
+    let btnThreeMin = btnThree.getAttribute("data-min");
+    let btnFourMin = btnFour.getAttribute("data-min");
+
+    // get the data-max of each button with const. fixed
+    const btnOneMax = btnOne.getAttribute("data-max");
+    const btnTwoMax = btnTwo.getAttribute("data-max");
+    const btnThreeMax = btnThree.getAttribute("data-max");
+    const btnFourMax = btnFour.getAttribute("data-max");
+
+    let stopOneValue, stopTwoValue, stopThreeValue, stopFourValue;
+
+    // counter 1st and its stop event
+    const counterOne = setInterval(() => {
+        if (btnOneMin < btnOneMax) {
+            btnOneMin++;
+            btnOne.value = btnOneMin;
+        } else {
+            btnOneMin = 460;
+        }
+    }, 50);
+    stopOne.addEventListener("click", ()=> {
+        clearInterval(counterOne);
+        stopOneValue = btnOneMin;
+        target.innerHTML = `0${stopOneValue} 00 00 00`;
+    });
+    // counter 2nd and its stop event
+    const counterTwo = setInterval(() => {
+        if (btnTwoMin < btnTwoMax) {
+            btnTwoMin++;
+            btnTwo.value = btnTwoMin;
+        } else {
+            btnTwoMin = 0;
+            if (btnTwoMin < 10) {
+                btnTwoMin = `0${btnTwoMin}`;
+            }
+            btnTwo.innerHTML = btnTwoMin;
+        }
+    }, 50);
+    stopTwo.addEventListener("click", ()=> {
+        clearInterval(counterTwo);
+        stopTwoValue = btnTwoMin;
+        target.innerHTML = `0${stopOneValue} ${stopTwoValue} 00 00`;
+    });
+    // counter 3rd and its stop event
+    const counterThree = setInterval(() => {
+        if (btnThreeMin < btnThreeMax) {
+            btnThreeMin++;
+            btnThree.value = btnThreeMin;
+        } else {
+            btnThreeMin = 0;
+            if (btnThreeMin < 10) {
+                btnThreeMin = `0${btnThreeMin}`;
+            }
+            btnThree.innerHTML = btnThreeMin;
+        }
+    }, 50);
+    stopThree.addEventListener("click", ()=> {
+        clearInterval(counterThree);
+        stopThreeValue = btnThreeMin;
+        target.innerHTML = `0${stopOneValue} ${stopTwoValue} ${stopThreeValue} 00`;
+    });
+    // counter 4th and its stop event
+    const counterFour = setInterval(() => {
+        if (btnFourMin < btnFourMax) {
+            btnFourMin++;
+            btnFour.value = btnFourMin;
+        } else {
+            btnFourMin = 0;
+            if (btnFourMin < 10) {
+                btnFourMin = `0${btnFourMin}`;
+            }
+            btnFour.innerHTML = btnFourMin;
+        }
+    }, 50);
+    stopFour.addEventListener("click", ()=> {
+        clearInterval(counterFour);
+        stopFourValue = btnFourMin;
+        target.innerHTML = `0${stopOneValue} ${stopTwoValue} ${stopThreeValue} ${stopFourValue}`;
+    });
+
+
+
+
 
 })();
