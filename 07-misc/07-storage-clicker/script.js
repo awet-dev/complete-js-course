@@ -11,6 +11,25 @@
 
 (function() {
 
-    // your code here
+    // select the target and the btn
+    const target = document.querySelector("#target");
+    const btn = document.querySelector("#increment");
+
+    // create counter function
+    function counter() {
+        if (typeof Storage === "undefined") {
+            target.innerHTML = "Sorry, your browser does not support web storage...";
+        } else {
+            if (localStorage.click) {
+                localStorage.click = Number(localStorage.click) + 1;
+            } else {
+                localStorage.click = 1;
+            }
+            target.innerHTML = `You have clicked ${localStorage.click} time(s).`;
+        }
+    }
+
+    btn.addEventListener("click", counter);
+
 
 })();
