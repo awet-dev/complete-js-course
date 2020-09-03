@@ -15,16 +15,17 @@
     const target = document.querySelector("#target");
     target.innerHTML = "";
 
-    // counter for every character
-    let i = 0;
-
     // translated text of the text content of target
-    const massage = 'I am a text that will appear in a "typewriter" effect, a bit like in black films. Except ... I don\'t know who the murderer is! Is there really one? Does he live at 21? What mysteries!'; /* The text */
+    const massage = "I am a text that will appear in a 'typewriter' effect, a bit like in black films. Except ... I don't know who the murderer is! Is there really one? Does he live at 21? What mysteries!"; /* The text */
 
-    // set how fast the text will display
-    const speed = Math.floor(Math.random() * 100);
+    // set how fast the text will display with setInterval
+    let speed;
+    setInterval(()=> {
+        speed = Math.floor(Math.random() * 100);
+    }, 1);
 
-    // function for the type writer effect
+    // function for the type writer effect and initiate counter for every character
+    let i = 0;
     function typeWriterEffect() {
         if (i < massage.length) {
             target.innerHTML += massage.charAt(i);
