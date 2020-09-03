@@ -38,7 +38,7 @@
             } else {
                 min = inputMinArray[index];
             }
-        }, 200);
+        }, 50);
         // listen to the click event and stop the counter of each input
         buttons[index].addEventListener("click", ()=> {
             clearTimeout(counter);
