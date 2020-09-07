@@ -10,9 +10,13 @@
 // You will have time to focus on it later.
 
 (() => {
-    // listen to the click event of the button
-    document.querySelector("#run").addEventListener("click",()=> {
-
-
+    // create async function that await to the promise to resolve
+    async function asyncFun() {
+        const result = await window.lib.getPosts();
+        console.log(result);
+    }
+    // listen to the click event of the button then call the async function
+    document.querySelector("#run").addEventListener("click", ()=> {
+        asyncFun();
     })
 })();
