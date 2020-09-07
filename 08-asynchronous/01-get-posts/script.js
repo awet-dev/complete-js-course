@@ -12,11 +12,13 @@
 (() => {
     // listen to the click event of the button
     document.querySelector("#run").addEventListener("click", ()=> {
+        // call the getPost function in the script
         window.lib.getPosts((error, article)=> {
             if (error) {
                 console.log(1);
             } else {
                 console.log(null);
+                // display to the console the array of articles
                 console.log(article);
             }
         });
