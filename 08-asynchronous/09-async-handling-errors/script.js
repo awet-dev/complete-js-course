@@ -10,5 +10,9 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    // listen to the click event
+    document.querySelector("#run").addEventListener("click", ()=> {
+
+    })
+
 })();

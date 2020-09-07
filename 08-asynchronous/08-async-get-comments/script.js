@@ -11,13 +11,22 @@
 
 (() => {
 
+
     // create async function
-    async function asyncFun() {
-        const result = await window.lib.getPosts();
+    async function asyncPost() {
+        const resultPost = await window.lib.getPosts();
+        resultPost.forEach(result => {
+            async function asyncComment() {
+                result.comment = await window.lib.getComments(result.id);
+                console.log(result.comment);
+            }
+            asyncComment();
+        })
 
     }
     // listen to the click event
     document.getElementById("run").addEventListener("click", ()=> {
-        asyncFun();
+        asyncPost()
+
     })
 })();
