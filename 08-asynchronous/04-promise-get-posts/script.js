@@ -12,15 +12,12 @@
 (() => {
     // listen to the click event
     document.querySelector("#run").addEventListener("click", ()=> {
-        let promise = new Promise((resolve , reject) => {
-            window.lib.getPosts()
-                .then(result => {
-                    console.log(result);
-                })
-                .catch(err => {
-                    reject(err);
-                });
+        new Promise((resolve, reject) => {
+            resolve(window.lib.getPosts());
+            reject();
+        }).then(result => {
+            console.log(result);
         });
     });
 
-})();
+} )();
