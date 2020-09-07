@@ -13,24 +13,25 @@
 
     // listen to the click event to run the getComment function
     document.getElementById("run").addEventListener("click", ()=> {
-        window.lib.getPosts((error, article)=> {
+        window.lib.getPosts((error, articles)=> {
             if (error) {
                 console.log(1);
             } else {
                 console.log(null);
-                article.forEach(art =>{
-                    window.lib.getComments(art.id, (error, table)=> {
+                articles.forEach(article => {
+                    window.lib.getComments(article.id, (error, table)=> {
                         if (error) {
                             console.log("one")
                         } else {
                             console.log(null);
-                            art.id = table;
-                            console.log(table);
+                            article.comment = table;
+                            console.log(article);
                         }
-                    });
+                    })
                 })
             }
         });
+
     })
 
 })();
