@@ -12,8 +12,14 @@
 (() => {
     // listen to the click event
     document.querySelector("#run").addEventListener("click", ()=> {
-        window.lib.getPosts().then(result=> {
-            console.log(result);
+        let promise = new Promise((resolve , reject) => {
+            window.lib.getPosts()
+                .then(result => {
+                    console.log(result);
+                })
+                .catch(err => {
+                    reject(err);
+                });
         });
     });
 
