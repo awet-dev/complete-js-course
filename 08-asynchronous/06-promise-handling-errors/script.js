@@ -10,5 +10,14 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    // listen to the click event
+    document.querySelector("#run").addEventListener("click", ()=> {
+        window.lib.getPersons()
+            .then(table => {
+            console.log(table);
+        })
+            .catch(error=> {
+                console.log(error);
+            })
+    })
 })();
