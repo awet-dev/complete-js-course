@@ -25,7 +25,7 @@
                         } else {
                             console.log(null);
                             article.comment = table;
-                            console.log(article);
+                            console.log(table);
                         }
                     })
                 })
