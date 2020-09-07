@@ -12,11 +12,12 @@
 (() => {
     // listen to the click event
     document.querySelector("#run").addEventListener("click", ()=> {
-        window.lib.getPersons()
-            .then(table => {
+        new Promise((resolve, reject) => {
+            resolve(window.lib.getPersons());
+            reject();
+        }).then(table => {
             console.log(table);
-        })
-            .catch(error=> {
+        }).catch(error=> {
                 console.log(error);
             })
     })

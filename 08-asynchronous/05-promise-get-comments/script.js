@@ -15,26 +15,17 @@
     document.querySelector("#run").addEventListener("click", ()=> {
         new Promise((resolve, reject) => {
             resolve(window.lib.getPosts());
-            reject();
-        }).then(result => {
-            result.forEach(res => {
+        }).then(result1 => {
+            result1.forEach(res => {
                 new Promise((resolve, reject) => {
                     resolve(window.lib.getComments(res.id));
-                    reject();
-                }).then(result=> {
-                       console.log(result);
-                    })
-            })
-        });
-        /*
-        window.lib.getPosts().then(results=>{
-            results.forEach(result=> {
-                window.lib.getComments(result.id).then(comment=> {
-                    result.id = comment;
-                    console.log(comment);
+                }).then(result2=> {
+                       console.log(result2);
+                    }).catch(error => {
+                        console.log(error);
                 })
             })
-        })
-         */
+        });
+
     })
 })();

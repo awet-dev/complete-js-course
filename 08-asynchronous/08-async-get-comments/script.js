@@ -14,11 +14,7 @@
     // create async function
     async function asyncFun() {
         const result = await window.lib.getPosts();
-        result.forEach(art => {
-            const finalResult = window.lib.getComments(art.id);
-            art.id = finalResult;
-            console.log(art.id);
-        })
+
     }
     // listen to the click event
     document.getElementById("run").addEventListener("click", ()=> {

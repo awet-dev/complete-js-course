@@ -14,10 +14,11 @@
     document.querySelector("#run").addEventListener("click", ()=> {
         new Promise((resolve, reject) => {
             resolve(window.lib.getPosts());
-            reject();
         }).then(result => {
             console.log(result);
-        });
+        }).catch(error => {
+            console.log(error);
+        })
     });
 
 } )();
