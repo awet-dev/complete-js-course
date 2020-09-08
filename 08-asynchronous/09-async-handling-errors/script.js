@@ -10,17 +10,17 @@
 // You will have time to focus on it later.
 
 (() => {
+    // create async function that wait to get respond from the getPerson function
     const getPerson = async () => {
         const person = await window.lib.getPersons();
+        // if respond do some thing in try block
         try {
             console.log(person);
-        } catch (error) {
+        } catch (error) { // else display the error
             console.log(error);
         }
     };
     // listen to the click event
-    document.querySelector("#run").addEventListener("click", ()=> {
-        getPerson();
-    })
+    document.querySelector("#run").addEventListener("click", getPerson);
 
 })();

@@ -16,7 +16,5 @@
         console.log(result);
     }
     // listen to the click event of the button then call the async function
-    document.querySelector("#run").addEventListener("click", ()=> {
-        asyncFun();
-    })
+    document.querySelector("#run").addEventListener("click", asyncFun);
 })();

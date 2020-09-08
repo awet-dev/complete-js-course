@@ -10,15 +10,18 @@
 // You will have time to focus on it later.
 
 (() => {
-    // listen to the click event
-    document.querySelector("#run").addEventListener("click", ()=> {
-        new Promise((resolve, reject) => {
-            resolve(window.lib.getPosts());
-        }).then(result => {
-            console.log(result);
-        }).catch(error => {
-            console.log(error);
-        })
+    // create displayPost function to return the resolved posts
+    const displayPost = ()=> {
+        const posts = window.lib.getPosts();
+        return Promise.resolve(posts);
+    };
+    // get that return and display it
+    let postsData = displayPost();
+    postsData.then(result => {
+       console.log(result);
     });
+
+    // listen to the click event
+    document.querySelector("#run").addEventListener("click", displayPost);
 
 } )();

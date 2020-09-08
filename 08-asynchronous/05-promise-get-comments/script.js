@@ -10,22 +10,33 @@
 // You will have time to focus on it later.
 
 (() => {
+    // create displayComment function
+    const displayComment = ()=> {
 
-    // listen to the click event
-    document.querySelector("#run").addEventListener("click", ()=> {
-        new Promise((resolve, reject) => {
-            resolve(window.lib.getPosts());
-        }).then(result1 => {
-            result1.forEach(res => {
-                new Promise((resolve, reject) => {
-                    resolve(window.lib.getComments(res.id));
-                }).then(result2=> {
-                       console.log(result2);
-                    }).catch(error => {
-                        console.log(error);
+        // get the post resolve it promisePosts
+        const posts = window.lib.getPosts();
+        let promisePosts = Promise.resolve(posts);
+
+        // manipulate the promisePosts by running loop over it
+        promisePosts.then(resultPosts => {
+            resultPosts.forEach(resultPost => {
+
+                // get the comments from the getComment function in the script
+                let comments = window.lib.getComments(resultPost.id);
+
+                // resolve the comment to the promiseComments
+                let promiseComments = Promise.resolve(comments);
+
+                // add the comment to the each post and then display it
+                promiseComments.then(promiseComment => {
+                    resultPost.comment = promiseComment;
+                    console.log(promiseComment);
                 })
+
             })
         });
+    };
 
-    })
+    // listen to the click event
+    document.querySelector("#run").addEventListener("click", displayComment);
 })();

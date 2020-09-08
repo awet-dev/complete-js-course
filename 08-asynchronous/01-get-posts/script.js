@@ -17,7 +17,6 @@
             if (error) {
                 console.log(1);
             } else {
-                console.log(null);
                 // display to the console the array of articles
                 console.log(article);
             }

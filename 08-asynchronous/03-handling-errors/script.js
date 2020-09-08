@@ -10,16 +10,21 @@
 // You will have time to focus on it later.
 
 (() => {
-    // listen to the click event
-    document.querySelector("#run").addEventListener("click", ()=> {
+
+    // create display function to display people array
+    const displayPerson = ()=> {
         window.lib.getPersons((error, people)=> {
             if (error) {
                 console.log("one");
+                // if error display it to the console
                 console.error();
             } else {
-                console.log(null);
+                // display the people array otherwise
                 console.log(people);
             }
         });
-    })
+    };
+
+    // listen to the click event to display the people array
+    document.querySelector("#run").addEventListener("click", displayPerson);
 })();

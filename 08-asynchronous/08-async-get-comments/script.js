@@ -14,19 +14,16 @@
 
     // create async function
     async function asyncPost() {
-         let posts = await window.lib.getPosts();
-         posts.forEach(post => {
-             async function asyncComment() {
-                 post.comment = await window.lib.getComments();
-                 console.log(post.comment);
-             }
-             asyncComment();
-         })
+        let posts = await window.lib.getPosts();
+        posts.forEach(post => {
+            async function asyncComment() {
+                post.comment = await window.lib.getComments(post.id);
+                console.log(post);
+            }
+            asyncComment();
+        });
     }
 
-
     // listen to the click event
-    document.getElementById("run").addEventListener("click", ()=> {
-        asyncPost();
-    })
+    document.getElementById("run").addEventListener("click", asyncPost);
 })();

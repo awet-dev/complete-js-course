@@ -10,15 +10,18 @@
 // You will have time to focus on it later.
 
 (() => {
-    // listen to the click event
-    document.querySelector("#run").addEventListener("click", ()=> {
-        new Promise((resolve, reject) => {
-            resolve(window.lib.getPersons());
-            reject();
-        }).then(table => {
-            console.log(table);
-        }).catch(error=> {
-                console.log(error);
-            })
-    })
+
+    // create function to display when the btn is clicked
+    const displayPerson = ()=> {
+        // get the promise and then resolve it is respond else catch the error
+        let promise = Promise.resolve(window.lib.getPersons());
+        promise.then(person => {
+            console.log(person);
+        }).catch(error => {
+            console.log(error);
+        })
+    };
+
+    // listen to the click event then call the display function
+    document.querySelector("#run").addEventListener("click", displayPerson)
 })();
