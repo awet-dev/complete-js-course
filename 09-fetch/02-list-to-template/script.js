@@ -11,31 +11,27 @@
 
 (() => {
 
+    // select the target
     const target = document.querySelector("#target");
 
+    // create fetchData for fetching data from the server
     const fetchData = ()=> {
+
         // fetch the data and then display by passing it to json method
         fetch('http://localhost:3000/heroes')
             .then(response => {
+                // get data that can be used by javascript
                 return response.json();
-            }).then(data => {
-                console.log(data);
-
-            for (let i = 0; i < data.length; i++) {
-                let temp = document.querySelector("#tpl-hero").content.cloneNode(true);
-                temp.querySelector(".name").innerHTML = data[i].name;
-                temp.querySelector(".alter-ego").innerHTML = data[i].alterEgo;
-                temp.querySelector(".powers").innerHTML = data[i].abilities;
-                target.appendChild(temp);
-            }
-
-
-
-
-
-
-
-
+            }).then(allData => {
+                allData.forEach(data => {
+                    // get the template which is in Html
+                    let temp = document.querySelector("#tpl-hero").content.cloneNode(true);
+                    // update all the data to it
+                    temp.querySelector(".name").innerHTML = data.name;
+                    temp.querySelector(".alter-ego").innerHTML = data.alterEgo;
+                    temp.querySelector(".powers").innerHTML = data.abilities;
+                    target.appendChild(temp);
+                });
         })
     };
     // listen to the click event
