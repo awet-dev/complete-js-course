@@ -12,6 +12,12 @@
 (() => {
 
     const target = document.querySelector("#target");
+    let temp = document.querySelector("#tpl-hero");
+    let list = temp.content.querySelector("li");
+    let title = temp.content.querySelector("h4");
+    let strong = temp.content.querySelector("strong");
+    let emphasis = temp.content.querySelector("em");
+    let para = temp.content.querySelector("p");
 
     const fetchData = ()=> {
         // fetch the data and then display by passing it to json method
@@ -20,27 +26,16 @@
                 return response.json();
             }).then(data => {
                 console.log(data);
-            let temp, hero, title, names, alterTag, power;
-            temp = document.getElementsByTagName("template")[0];
-            hero = temp.content.querySelector("li");
-            title = temp.content.querySelector("li h4");
-            names = temp.content.querySelector("li h4 strong");
-            alterTag = temp.content.querySelector("li h4 em");
-            power = temp.content.querySelector("li p");
-            let n;
             for (let i = 0; i < data.length; i++) {
-                title = document.importNode(hero, true);
-                names = document.importNode(title, true);
-                names.textContent = data[i].name;
-                alterTag = document.importNode(title, true);
-                alterTag.textContent = data[i].alterEgo;
-                power = document.importNode(hero, true);
-                power.textContent = data[i].abilities;
-
+                strong.innerHTML = data[i].name;
+                emphasis.innerHTML = data[i].alterEgo;
+                para.innerHTML = data[i].abilities;
+                title.appendChild(strong);
+                title.appendChild(emphasis);
             }
-            target.appendChild(hero);
-
-
+            list.appendChild(title);
+            list.appendChild(para);
+            target.appendChild(list);
 
         })
     };
