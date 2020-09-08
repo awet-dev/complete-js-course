@@ -10,5 +10,23 @@
 // You will have time to focus on it later.
 
 (() => {
-    // your code here
+    // create a function that deletes the api which has the same id as the userInput
+    const deleteFun = ()=> {
+        let userInput = document.querySelector("#hero-id").value;
+        fetch('http://localhost:3000/heroes')
+            .then(respond => {
+                return respond.json();
+        }).then(allData => {
+            console.log(allData);
+            allData.forEach(data => {
+                if (data.id == userInput) {
+                   allData.pop(data);
+                   console.log(allData);
+                }
+            })
+        })
+    };
+
+    // listen to the click event of the button
+    document.querySelector("#run").addEventListener("click", deleteFun)
 })();
