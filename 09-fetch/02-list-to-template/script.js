@@ -12,12 +12,6 @@
 (() => {
 
     const target = document.querySelector("#target");
-    let temp = document.querySelector("#tpl-hero");
-    let list = temp.content.querySelector("li");
-    let title = temp.content.querySelector("h4");
-    let strong = temp.content.querySelector("strong");
-    let emphasis = temp.content.querySelector("em");
-    let para = temp.content.querySelector("p");
 
     const fetchData = ()=> {
         // fetch the data and then display by passing it to json method
@@ -26,16 +20,21 @@
                 return response.json();
             }).then(data => {
                 console.log(data);
+
             for (let i = 0; i < data.length; i++) {
-                strong.innerHTML = data[i].name;
-                emphasis.innerHTML = data[i].alterEgo;
-                para.innerHTML = data[i].abilities;
-                title.appendChild(strong);
-                title.appendChild(emphasis);
+                let temp = document.querySelector("#tpl-hero").content.cloneNode(true);
+                temp.querySelector(".name").innerHTML = data[i].name;
+                temp.querySelector(".alter-ego").innerHTML = data[i].alterEgo;
+                temp.querySelector(".powers").innerHTML = data[i].abilities;
+                target.appendChild(temp);
             }
-            list.appendChild(title);
-            list.appendChild(para);
-            target.appendChild(list);
+
+
+
+
+
+
+
 
         })
     };
