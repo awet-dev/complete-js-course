@@ -17,13 +17,13 @@
             .then(respond => {
                 return respond.json();
         }).then(allData => {
-            console.log(allData);
             allData.forEach(data => {
                 if (data.id == userInput) {
-                   allData.pop(data);
-                   console.log(allData);
+                    let index = allData.indexOf(data);
+                    allData.splice(index, 1);
+                    console.log(allData);
                 }
-            })
+            });
         })
     };
 
